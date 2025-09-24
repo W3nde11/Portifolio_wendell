@@ -3,24 +3,40 @@ import styled from "styled-components";
 
 export default function ThemeToggle() {
   const [active, setActive] = useState(false);
-  const [tema, setTema] = useState("dark"); // começa no claro
+  const [tema, setTema] = useState("dark");
 
-  // Atualiza o <html data-contexto="...">
+  useEffect(() => {
+    const salvo = localStorage.getItem("tema");
+    if (salvo) {
+      setTema(salvo);
+    } else if (
+      window.matchMedia &&
+      window.matchMedia("prefers-color-scheme: dark)").matches
+    ) {
+      setTema("light");
+    }
+  }, []);
+
   useEffect(() => {
     document.documentElement.setAttribute("data-contexto", tema);
+    localStorage.setItem("tema", tema);
   }, [tema]);
 
-  const handleClick = () => {
-    setActive(!active);
+  const toggleTema = () => {
     setTema((prev) => (prev === "dark" ? "light" : "dark"));
+    setActive(!active);
+    document.body.classList.toggle("light");
   };
 
   return (
     <StyledWrapper>
       <button
-        aria-label="Trocar o tema para modo claro ou escuro."
+        onClick={toggleTema}
+        aria-pressed={tema === "dark"}
+        aria-label={
+          tema === "dark" ? "Ativar tema claro" : "Ativar tema escuro"
+        }
         className={`theme__icon ${active ? "active" : ""}`}
-        onClick={handleClick}
       >
         <span></span> {/* sol */}
         <span>
@@ -59,7 +75,7 @@ const StyledWrapper = styled.div`
     width: 14px;
     height: 14px;
     border-radius: 24px;
-    border: 1px solid var(--backGround-body);
+    border: 1px solid var(--fundo-cabecalho-rodape);
     position: absolute;
     top: 50%;
     left: 50%;
