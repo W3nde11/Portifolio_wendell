@@ -1,0 +1,139 @@
+.capa {
+  margin-top: 104.56px;
+}
+
+.capa,
+.container_texto,
+.area_img_capa,
+.imagem_status,
+.circulo_primario,
+.circulo_segundario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capa,
+.container_texto {
+  flex-direction: column;
+  gap: clamp(1rem, 5vw, 2.5rem); /* espaçamento relativo */
+}
+
+.imagem_status {
+  flex-direction: column;
+  gap: clamp(0.3rem, 2vw, 0.8rem);
+}
+
+.circulo_primario,
+.circulo_segundario {
+  background: transparent;
+  border: 2px solid var(--circulos-capa);
+  border-radius: 50%;
+}
+
+.circulo_primario {
+  width: clamp(170px, 70vw, 340px);
+  height: clamp(170px, 70vw, 340px);
+  padding: clamp(0.5rem, 2vw, 1rem);
+}
+
+.circulo_segundario {
+  width: clamp(160px, 65vw, 320px);
+  height: clamp(160px, 65vw, 320px);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.foto_capa {
+  object-fit: cover;
+  width: 100%; 
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.circulo_segundario:hover .foto_capa {
+  transform: scale(1.2); /* Aumenta 20% ao passar o mouse */
+}
+
+.container_titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font: 600 clamp(1.2rem, 5vw, 2rem) var(--fonte-titulo);
+  text-align: center;
+  gap: .5rem;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.titulo_principal_destaque {
+  color: var(--capa-titulo-destaque);
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typing 1s steps(8, end) infinite alternate,
+    blink 0.1s step-end infinite;
+}
+
+.caixa_descricao_capa {
+  border: 2px solid var(--capa-borda-caixa-texto);
+  border-radius: 24px;
+  padding: clamp(0.8rem, 3vw, 1.2rem);
+  box-shadow: 0 8px 20px -10px var(--sobras);
+  max-width: 90%; /* evita ocupar largura total em mobile */
+  background-color: var(--caixa-texto);
+}
+
+.descricao_capa {
+  color: var(--texto);
+  text-align: center;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 4ch;
+  } /* "WEB" tem 3 letras + 1 espaço de segurança */
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (min-width: 768px) {
+  .capa {
+    margin-top: 72px;
+  }
+
+  .conteudo_capa {
+    display: flex;
+    gap: 5rem;
+  }
+
+  .circulo_primario {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .circulo_segundario {
+    width: 27vw;
+    height: 27vw;
+  }
+
+  .foto_capa {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+@media (min-width: 1024px){
+  .container_titulo{
+    flex-direction: row;
+  }
+}

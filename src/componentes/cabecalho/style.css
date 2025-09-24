@@ -1,0 +1,99 @@
+/* Cabeçalho base */
+.cabecalho {
+  background-color: var(--fundo-cabecalho-rodape);
+  display: grid;
+  align-items: center;
+  grid-template:
+    "logo acao" auto
+    "nav nav" auto /
+    1fr auto;
+  row-gap: clamp(0.5rem, 2vw, 1.5rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: clamp(0.5rem, 3vw, 1rem);
+  box-sizing: border-box;
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+/* Logo escondido em mobile grande */
+.viwer_pc {
+  display: none;
+}
+
+.acao {
+  grid-area: acao;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.navegacao_cabecalho {
+  grid-area: nav;
+}
+
+.lista-links_cabecalho {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(0.5rem, 3vw, 2rem);
+  flex-wrap: wrap; /* evita quebra feia em telas muito pequenas */
+}
+
+/* Links e botões */
+.btn-contato_cabecalho,
+.link_cabecalho {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  color: var(--texto-cabecalho-rodape);
+}
+
+.link_cabecalho {
+  transition: 0.1s;
+}
+
+.link_cabecalho:hover {
+  color: var( --nav-cabecalho-rodape);
+  border-bottom: 2px solid var(--nav-cabecalho-rodape);
+  padding-bottom: 0.3rem;
+}
+
+/* Rodapé centralizado */
+.container_rodape {
+  text-align: center;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding: clamp(0.5rem, 2vw, 1rem);
+}
+
+/* Responsividade para tablets */
+@media (min-width: 768px) {
+  .cabecalho {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cabecalho figure {
+    order: 1;
+    display: flex;
+  }
+  .cabecalho nav {
+    order: 2;
+  }
+  .cabecalho div {
+    order: 3;
+  }
+
+  .lista-links_cabecalho {
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+}
+
+/* Responsividade para desktops */
+@media (min-width: 1024px) {
+  .viwer_pc {
+    display: block;
+  }
+}

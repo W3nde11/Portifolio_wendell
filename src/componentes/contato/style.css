@@ -1,0 +1,119 @@
+.caixa_forms,
+.caixa_btn_contato {
+  border: 2px solid var(--borda-container-contato);
+  padding: 1rem;
+}
+
+.caixa_forms {
+  margin-top: 1rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px -10px var(--sobras);
+  background-color: var(--fundo-container-forms);
+  color: var(--texto-contato);
+}
+
+.caixa_forms form,
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form div {
+  gap: 0.5rem;
+}
+
+form label {
+  font-weight: 500;
+}
+
+/* Inputs sempre ocupam largura total */
+form input,
+textarea {
+  width: 93%;
+  padding: 0.5rem;
+  border: 2px solid var(--borda-container-contato);
+  background: var(--fundo-input-contato);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+/* Altura do textarea proporcional */
+form textarea {
+  min-height: 6rem;
+  height: auto;
+  resize: vertical; /* permite redimensionar */
+}
+
+/* Botão fluído */
+form button {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #3f1665, #7f2ccb);
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.caixa_forms legend {
+  margin-top: 1rem;
+}
+
+.caixa_btn_contato {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  flex-wrap: wrap; /* evita quebra em telas pequenas */
+  box-shadow: 0 8px 20px -10px var(--sobras);
+  background-color: var(--fundo-container-forms);
+  color: var(--texto-contato);
+}
+
+.fundo_icone_contato {
+  display: inline-block;
+  padding: 0.3rem 0.2rem 0 0.3rem;
+  border: 2px solid var(--borda-container-contato);
+  border-radius: 8px;
+  background-color: var(--fundo-icone-btn-contato);
+}
+
+.icone_link_whatsapp::before {
+  content: url(../../../public/32px/whatsapp.svg);
+}
+
+.icone_link_email::before {
+  content: url(../../../public/32px/mail.svg);
+}
+
+.email {
+  font-size: 0.9rem;
+}
+
+/* --- Responsividade --- */
+@media screen and (min-width: 768px) {
+  .caixa_forms {
+    padding: 2rem;
+  }
+
+  form button {
+    align-self: flex-start; /* botão não ocupa largura toda */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contato {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .caixa_forms,
+  .caixa_btn_contato {
+    flex: 1; /* ficam proporcionais lado a lado */
+  }
+}

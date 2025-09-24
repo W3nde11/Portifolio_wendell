@@ -1,0 +1,73 @@
+.descricao_softskills {
+  margin: 1rem 0 2.5em;
+  color: var(--borda-card-skills);
+}
+
+.container_card {
+  width: 100%;
+  max-width: 290px; /* cresce até aqui no mobile */
+  padding: 1.5rem;
+  border: 2px solid var(--borda-card-skills);
+  border-radius: 25px;
+  background: var(--fundo-card-skills);
+
+  /* evita altura fixa */
+  min-height: 350px;
+  height: auto;
+}
+
+.titulo_card,
+.nome_skill {
+  font-weight: 600;
+}
+
+.titulo_card {
+  text-align: center;
+  font-size: clamp(1.25rem, 2vw, 1.5rem); /* tamanho responsivo */
+  color: var(--titulo-card-skills);
+  font-family: var(--fonte-titulo);
+  line-height: 1.5rem;
+}
+
+.resumo_card {
+  margin: 1rem 0;
+  text-align: left;
+  color: var(--borda-card-skills);
+}
+
+.container_card .lista_skills_card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item_lista_skills {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icone_skill {
+  width: 1.875rem; /* 30px em rem */
+  max-width: 10%;
+  height: auto;
+}
+
+.nome_skill {
+  color: var(--borda-card-skills);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* --- Responsividade --- */
+@media screen and (min-width: 768px) {
+  .container_card {
+    width: 100%;
+    max-width: 170px; /* mais compacto no tablet */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container_card {
+    max-width: 200px; /* no desktop cresce um pouco mais */
+  }
+}

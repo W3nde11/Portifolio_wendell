@@ -1,0 +1,189 @@
+.container_texto_sobre,
+.sobre {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.caixa_texto{
+  background-color: var(--caixa-texto);
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px -10px var(--sobras)
+}
+
+section p {
+  text-align: justify;
+}
+
+.subtitulo,
+.subtitulo_formacao_academica,
+.container_redes p {
+  font-weight: 600;
+}
+
+.subtitulo {
+  font-weight: 600; 
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--titulos);
+}
+
+.lista_coisas-que-amo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-self: self-start;
+  margin-left: 1.5rem;
+  height: auto; /* antes era fixo em 4em */
+  row-gap: 0.5rem;
+  column-gap: 2.5em;
+  list-style: square;
+}
+
+.caixa_formacao_academica {
+  background: var(--fundo-card-formacao-acad);
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.caixa_formacao_academica div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.caixa_icone {
+  display: inline-block;
+  padding: 0 0.2rem;
+  border: 2px solid var(--titulo-card-formacao-acad);
+  border-radius: 8px;
+  background: var(--texto-card-formacao-acad);
+}
+
+.icone_formacao_academica::before {
+  content: url(../../../public/32px/academico.svg);
+}
+
+.subtitulo_formacao_academica {
+  text-transform: uppercase;
+  color: var(--titulo-card-formacao-acad);
+}
+
+.texto_formacao_academica {
+  color: var(--texto-card-formacao-acad);
+  margin: 1rem 0 1.5rem;
+  text-align: left;
+}
+
+.status_curso {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--titulo-card-formacao-acad);
+  border-radius: 25px;
+  color: var(--texto-status);
+  background: var(--fundo-status);
+  font-weight: 600;
+}
+
+/* --- Carrossel responsivo --- */
+.carrossel-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  aspect-ratio: 1/1; /* sempre quadrado */
+}
+
+.slide-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-content img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.container_redes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.container-veja_sobre p {
+  text-transform: uppercase;
+  color: var(--titulos);
+  font-weight: 600; 
+  font-size: (1rem, 2vw, 1.2rem) ;
+}
+
+.container-veja_sobre address {
+  display: flex;
+  gap: .7rem;
+}
+
+.icone_twitter::before {
+  content: url(../../../public/24px/twitter.svg);
+}
+
+.icone_linkedin::before {
+  content: url(../../../public/24px/linkedin-logo.svg);
+}
+
+/* ============================= */
+/* RESPONSIVIDADE - Mobile First */
+/* ============================= */
+@media (min-width: 768px) {
+  .sobre {
+    display: grid;
+    grid-template-areas:
+      "texto swiper"
+      "card card";
+    gap: 1.5rem;
+  }
+
+  .carrossel-container {
+    max-width: 300px; /* proporcional no tablet */
+  }
+
+  .slide-content img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container_texto_sobre {
+    grid-area: texto;
+  }
+
+  .caixa_formacao_academica {
+    grid-area: card;
+  }
+
+  .carrossel-container {
+    grid-area: swiper;
+  }
+
+  .lista_coisas-que-amo {
+    align-self: flex-start;
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sobre {
+    grid-template-areas:
+      "texto swiper"
+      "card";
+    grid-template-columns: 1fr auto;
+    align-items: flex-start;
+  }
+
+  .carrossel-container {
+    max-width: 300px; /* cresce no desktop */
+  }
+}

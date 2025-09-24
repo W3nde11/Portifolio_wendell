@@ -1,0 +1,104 @@
+body {
+  box-sizing: border-box;
+  font-family: var(--fonte-texto);
+  font-size: 1rem; /* não altera */
+  font-weight: 400;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+.area_capa,
+.secao_sobre,
+.secao_skills,
+.secao_projetos,
+.secao_contato {
+  padding: 1.5em;
+}
+
+.titulo {
+  margin-bottom: 1rem;
+  font: 600 2rem var(--fonte-titulo);
+  color: var(--titulos);
+  text-transform: uppercase;
+}
+
+.descricao {
+  text-align: left;
+}
+
+.secao_skills .lista_secao_skills,
+.secao_projetos .lista_secao_projetos {
+  display: flex;
+  flex-direction: column; /* padrão mobile */
+  margin-top: 1.5rem;
+}
+
+.secao_skills .lista_secao_skills {
+  gap: 1rem;
+}
+
+.secao_projetos .lista_secao_projetos {
+  gap: 1.5rem;
+}
+
+/* --- Tablet --- */
+@media screen and (min-width: 768px) {
+  .area_capa,
+  .secao_sobre,
+  .secao_skills,
+  .secao_projetos,
+  .secao_contato {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 6em;
+  }
+
+  /* disposição em linha, mas sem alterar tamanho dos cards */
+  .secao_skills .lista_secao_skills {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .secao_projetos .lista_secao_projetos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+/* --- Desktop --- */
+@media screen and (min-width: 1024px) {
+  .area_capa,
+  .secao_sobre,
+  .secao_skills,
+  .secao_projetos,
+  .secao_contato {
+    padding: 2em 12vw;
+  }
+
+  .secao_skills .lista_secao_skills {
+    flex-wrap: nowrap;
+  }
+
+  .secao_contato,
+  .area_rodape {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* --- Monitores grandes --- */
+@media screen and (min-width: 1440px) {
+  .area_capa,
+  .secao_sobre,
+  .secao_skills,
+  .secao_projetos,
+  .secao_contato {
+    padding: 3em 18vw;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
