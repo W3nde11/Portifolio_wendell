@@ -51,7 +51,7 @@ export default function Rodape({ frase, linkURL, local }) {
           <li className="item_navegacao_rodape">
             <a
               aria-label="Ir para o inicio da página De Campos"
-              href="#id_capa"
+              href="#main"
               className="link_navegacao_rodape"
             >
               Home

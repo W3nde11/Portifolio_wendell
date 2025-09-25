@@ -174,4 +174,12 @@ const StyledWrapper = styled.div`
     top: 35%;
     left: 40%;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
 `;

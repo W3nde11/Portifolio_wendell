@@ -71,6 +71,13 @@ const StyledWrapper = styled.div`
       background-position: right bottom;
     }
   }
+    @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
 `;
 
 export default Button;

@@ -1,4 +1,5 @@
 import "./App.css";
+import { HelmetProvider } from "react-helmet-async";
 import Cabecalho from "./componentes/cabecalho";
 import Capa from "./componentes/capa";
 import Sobre from "./componentes/sobre";
@@ -7,14 +8,14 @@ import Contato from "./componentes/contato";
 import Rodape from "./componentes/rodape";
 import { useEffect, useState } from "react";
 import Skills from "./componentes/softkills";
-import curriculo from "./assets/capa/curriculo.pdf";
 import img1 from "./assets/swiper/img1.png";
 import img2 from "./assets/swiper/img1.png";
 import img3 from "./assets/swiper/img1.png";
 import img4 from "./assets/swiper/img1.png";
 import perfil from "./assets/capa/foto_perfil.svg";
 import WhatsAppFloat from "./componentes/btnwhatsapp/btnwhatsapp";
-import Loader from "./componentes/carregador";
+import Loader from "./componentes/carregador/loaders";
+
 
 function App() {
   const listaSobre = [
@@ -33,6 +34,7 @@ function App() {
     email: "campos19ferraz@outlook.com",
     twitter: "https://x.com/W3nde11_C",
   };
+
   const [dadosSkills, setDadosSkills] = useState([]);
   const [dadosProjetos, setDadosProjetos] = useState([]);
 
@@ -47,11 +49,11 @@ function App() {
   }, []);
 
   return (
-    <>
+    <HelmetProvider>
       <header className="area_cabecalho">
         <Cabecalho className="secao_cabecalho" />
       </header>
-      <main className="area_capa" id="id_capa">
+      <main className="area_capa" id="main">
         <Capa
           className="secao_capa"
           imgPerfil={perfil}
@@ -59,7 +61,7 @@ function App() {
             "Toda inovação vem acompanhada de transparência e dedicação. Cada linha de código, design e solução apresentada neste portfólio, foi criado com foco em resultados reais e personalizados. Aqui á somente o meu trabalho, mas também minha forma de pensar: clara, responsável e aberta ao diálogo."
           }
           status={"Disponivel"}
-          document={curriculo}
+          document={"https://drive.google.com/file/d/1TfWszaDDHvNHm0BZRJlqCzGKVz-zlGiU/view?usp=drive_link"}
         />
       </main>
       <WhatsAppFloat linkURL={linksPessoais} />
@@ -143,7 +145,7 @@ function App() {
           local={"Suzano, Sp - Brasil"}
         />
       </footer>
-    </>
+    </HelmetProvider>
   );
 }
 

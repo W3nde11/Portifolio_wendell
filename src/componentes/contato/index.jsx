@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./style.css";
+import { Helmet } from "react-helmet-async";
 
 export default function Contato({ linksURL }) {
   const form = useRef();
@@ -25,9 +26,18 @@ export default function Contato({ linksURL }) {
   };
 
   return (
-    <div className="contato">
-      <div className="caixa_forms">
-        <form ref={form} onSubmit={sendEmail}>
+    <>
+      <Helmet>
+        <title>Contato -Wendell Campos</title>
+        <meta
+          name="description"
+          content="Entre em contato comigo"
+        />
+      </Helmet>
+
+      <div className="contato">
+        <div className="caixa_forms">
+          <form ref={form} onSubmit={sendEmail}>
             <div>
               <label htmlFor="nome">Seu Nome</label>
               <input
@@ -74,35 +84,36 @@ export default function Contato({ linksURL }) {
                 required
               ></textarea>
             </div>
-          <button type="submit">Enviar mensagem</button>
-        </form>
-        <legend>Estou ansioso pelo o seu contato!</legend>
-      </div>
+            <button type="submit">Enviar mensagem</button>
+          </form>
+          <legend>Estou ansioso pelo o seu contato!</legend>
+        </div>
 
-      <address>
-        <a href={linksURL.whatsapp} target="_blank" rel="noreferrer">
+        <address>
+          <a href={linksURL.whatsapp} target="_blank" rel="noreferrer">
+            <div className="caixa_btn_contato">
+              <div className="fundo_icone_contato">
+                <span className="icone_link_whatsapp"></span>
+              </div>
+              <div>
+                <span className="titulo_btn_contato">WhatsApp</span>
+                <br />
+                Disponível para contato
+              </div>
+            </div>
+          </a>
           <div className="caixa_btn_contato">
             <div className="fundo_icone_contato">
-              <span className="icone_link_whatsapp"></span>
+              <span className="icone_link_email"></span>
             </div>
             <div>
-              <span className="titulo_btn_contato">WhatsApp</span>
+              <span className="titulo_btn_contato">Email</span>
               <br />
-              Disponível para contato
+              <span className="email">{linksURL.email}</span>
             </div>
           </div>
-        </a>
-        <div className="caixa_btn_contato">
-          <div className="fundo_icone_contato">
-            <span className="icone_link_email"></span>
-          </div>
-          <div>
-            <span className="titulo_btn_contato">Email</span>
-            <br />
-            <span className="email">{linksURL.email}</span>
-          </div>
-        </div>
-      </address>
-    </div>
+        </address>
+      </div>
+    </>
   );
 }

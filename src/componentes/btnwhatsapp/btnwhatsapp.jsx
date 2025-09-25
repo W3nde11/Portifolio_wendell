@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import icon from '../../../public/32px/whatsapp_btn.svg';
 
 // Animação de pulsar
 const pulse = keyframes`
@@ -41,6 +42,14 @@ const WhatsAppButton = styled.a`
     transform: scale(1.15);
     animation: none; /* pausa o pulsar no hover */
   }
+
+  @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
 `;
 
 export default function WhatsAppFloat({ linkURL }) {
@@ -52,8 +61,8 @@ export default function WhatsAppFloat({ linkURL }) {
       rel="noopener noreferrer"
     >
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-        alt="WhatsApp"
+        src={icon}
+        alt=""
       />
     </WhatsAppButton>
   );

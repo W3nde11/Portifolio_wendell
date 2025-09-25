@@ -73,6 +73,14 @@ const StyledWrapper = styled.div`
 
   a:hover .arrow:before {
     right: 0;
-  }`;
+  }
+    
+  @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}`;
 
 export default Button;

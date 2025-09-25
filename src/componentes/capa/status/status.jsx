@@ -1,19 +1,21 @@
-
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Status = () => {
   return (
     <StyledWrapper>
-      <button className="available-for-btn">
+      <button
+        className="available-for-btn"
+        aria-label="Status de trabalho do Wendell Campos"
+      >
         <div className="circle">
           <div className="dot" />
           <div className="outline" />
         </div>
-       Diponível
+        Diponível
       </button>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   .available-for-btn {
@@ -23,15 +25,15 @@ const StyledWrapper = styled.div`
     column-gap: 2px;
     color: var(--capa-texto-status);
     border-radius: 100px;
-    padding: .5rem .75rem;
+    padding: 0.5rem 0.75rem;
     outline: none;
     border: 1px solid;
-    font-size: .6rem;
+    font-size: 0.6rem;
     font-weight: 600;
     position: relative;
     transition: 0.2s ease-in-out;
     cursor: pointer;
-    background-color: var(--capa-fundo-status)
+    background-color: var(--capa-fundo-status);
   }
   .available-for-btn:hover {
     font-weight: 700;
@@ -126,6 +128,15 @@ const StyledWrapper = styled.div`
       outline-offset: 20px;
       opacity: 0;
     }
-  }`;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+`;
 
 export default Status;
