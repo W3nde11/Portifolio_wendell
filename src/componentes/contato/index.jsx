@@ -29,10 +29,7 @@ export default function Contato({ linksURL }) {
     <>
       <Helmet>
         <title>Contato -Wendell Campos</title>
-        <meta
-          name="description"
-          content="Entre em contato comigo"
-        />
+        <meta name="description" content="Entre em contato comigo" />
       </Helmet>
 
       <div className="contato">
@@ -41,6 +38,7 @@ export default function Contato({ linksURL }) {
             <div>
               <label htmlFor="nome">Seu Nome</label>
               <input
+                autoComplete="on"
                 type="text"
                 name="user_name"
                 id="nome"
@@ -51,6 +49,7 @@ export default function Contato({ linksURL }) {
             <div>
               <label htmlFor="email">Email</label>
               <input
+                autoComplete="on"
                 type="email"
                 name="user_email"
                 id="email"
