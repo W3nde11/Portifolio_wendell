@@ -8,11 +8,11 @@ import Contato from "./componentes/contato";
 import Rodape from "./componentes/rodape";
 import { useEffect, useState } from "react";
 import Skills from "./componentes/softkills";
-import img1 from "./assets/swiper/img1.png";
-import img2 from "./assets/swiper/img1.png";
-import img3 from "./assets/swiper/img1.png";
-import img4 from "./assets/swiper/img1.png";
-import perfil from "./assets/capa/foto_perfil.svg";
+import img1 from "./assets/swiper/img1.webp";
+import img2 from "./assets/swiper/img1.webp";
+import img3 from "./assets/swiper/img1.webp";
+import img4 from "./assets/swiper/img1.webp";
+import perfil from "./assets/capa/foto_perfil.webp";
 import WhatsAppFloat from "./componentes/btnwhatsapp/btnwhatsapp";
 import Loader from "./componentes/carregador/loaders";
 
