@@ -13,9 +13,8 @@
   --borda-card-skills: #040b18;
   --fundo-card-skills: white;
   --titulo-card-skills: #7f2ccb;
-  --fundo-img-projeto: #224c7e;
+  --fundo-img-projeto: #3d6affaa;
   --subtitulo-rodape:#3c913f;
-  
 
   --fonte-titulo: "JetBrains Mono", monospace;
   --fonte-texto: "Source Code Pro", monospace;
@@ -57,8 +56,8 @@
   --caixa-texto: white;
   --fundo-status-projeto: #3d6affaa;
   --borda-container-contato: #040b18;
-  --fundo-container-forms: #040b18;
-  --texto-contato: #3c913f;
+  --fundo-container-forms: #4434d1;
+  --texto-contato: #e8fb98;
   --fundo-icone-btn-contato: white;
   --fundo-input-contato: white;
 }

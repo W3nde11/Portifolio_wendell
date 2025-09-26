@@ -20,7 +20,10 @@ export default function Sobre({
     <>
       <Helmet>
         <title>Sobre -Wendell Campos</title>
-        <meta name="description" content="Conheça um pouco da minha trajetoria e qualificações" />
+        <meta
+          name="description"
+          content="Conheça um pouco da minha trajetoria e qualificações"
+        />
       </Helmet>
 
       <section className="sobre">
@@ -64,6 +67,8 @@ export default function Sobre({
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 loop
+                role="region"
+                aria-label="Galeria de projetos"
               >
                 {imagemURL.map((img, index) => (
                   <SwiperSlide key={index}>
@@ -72,7 +77,9 @@ export default function Sobre({
                         className="imagem_carrossel"
                         loading="lazy"
                         src={img}
-                        alt={`Slide ${index}`}
+                        alt={`imagem ${index}`}
+                        width={400}
+                        height={480}
                       />
                     </div>
                   </SwiperSlide>

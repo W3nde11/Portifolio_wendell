@@ -11,8 +11,10 @@ export default function ThemeToggle() {
       setTema(salvo);
     } else if (
       window.matchMedia &&
-      window.matchMedia("prefers-color-scheme: dark)").matches
+      window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
+      setTema("dark");
+    }else {
       setTema("light");
     }
   }, []);
@@ -25,7 +27,6 @@ export default function ThemeToggle() {
   const toggleTema = () => {
     setTema((prev) => (prev === "dark" ? "light" : "dark"));
     setActive(!active);
-    document.body.classList.toggle("light");
   };
 
   return (

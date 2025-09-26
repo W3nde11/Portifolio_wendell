@@ -1,15 +1,30 @@
 import "./style.css";
 import ThemeToggle from "./tema/ThemeToggle";
-import Logo1 from "../../../public/logo_part1.png";
-import Logo2 from "../../../public/logo_part2.png";
+import Logo1 from "../../../public/logo_part1.webp";
+import Logo2 from "../../../public/logo_part2.webp";
 import Button from "./botao/btn_contato";
 
 export default function Cabecalho() {
   return (
     <div className="cabecalho">
       <figure>
-        <img src={Logo1} alt="Logo do site De Campos" className="icone" />
-        <img src={Logo2} alt="" className="logo viwer_pc" />
+        <img
+          src={Logo1}
+          alt="Logo do site De Campos"
+          className="icone"
+          loading="lazy"
+          width={36}
+          height={40}
+        />
+        <img
+          src={Logo2}
+          aria-hidden="true"
+          alt=""
+          className="logo viwer_pc"
+          loading="lazy"
+          width={125}
+          height={40}
+        />
       </figure>
       <div className="acao">
         <a

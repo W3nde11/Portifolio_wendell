@@ -1,5 +1,5 @@
 import "./style.css";
-import logo from "../../../public/logo_decampos.png";
+import logo from "../../../public/logo_decampos.webp";
 
 export default function Rodape({ frase, linkURL, local }) {
   return (

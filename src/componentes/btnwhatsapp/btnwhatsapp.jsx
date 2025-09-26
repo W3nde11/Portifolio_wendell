@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import icon from '../../../public/32px/whatsapp_btn.svg';
+import icon from "../../../public/32px/whatsapp_btn.svg";
 
 // Animação de pulsar
 const pulse = keyframes`
@@ -33,23 +33,18 @@ const WhatsAppButton = styled.a`
   /* Animação de pulsar */
   animation: ${pulse} 2s infinite;
 
-  img {
-    width: 30px;
-    height: 30px;
-  }
-
   &:hover {
     transform: scale(1.15);
     animation: none; /* pausa o pulsar no hover */
   }
 
   @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
+    * {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
-}
 `;
 
 export default function WhatsAppFloat({ linkURL }) {
@@ -60,10 +55,7 @@ export default function WhatsAppFloat({ linkURL }) {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
-        src={icon}
-        alt=""
-      />
+      <img src={icon} alt="" aria-hidden="true" width="30" height="30" />
     </WhatsAppButton>
   );
 }

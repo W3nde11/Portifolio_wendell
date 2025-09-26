@@ -35,6 +35,8 @@ export default function Projetos({
             className="imagem_projeto"
             src={imagem}
             alt="Imagem do projeto"
+            width={407}
+            height={370}
           />
         </div>
       </figure>

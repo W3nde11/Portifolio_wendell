@@ -22,9 +22,11 @@ export default function Capa({ imgPerfil, TextCapa, document }) {
                 <div className="circulo_segundario">
                   <img
                     src={imgPerfil}
-                    loading="lazy"
+                    loading="eager"
                     alt="Foto do Wendell Campos sorrindo, homem cabelo ondulado preto, barba completa, vetindo uma camisa laraja em um fundo gradinete azul e lilás"
                     className="foto_capa"
+                    width={320}
+                    height={320}
                   />
                 </div>
               </div>

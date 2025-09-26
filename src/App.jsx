@@ -2,11 +2,8 @@ import "./App.css";
 import { HelmetProvider } from "react-helmet-async";
 import Cabecalho from "./componentes/cabecalho";
 import Capa from "./componentes/capa";
-import Sobre from "./componentes/sobre";
-import Projetos from "./componentes/projetos";
-import Contato from "./componentes/contato";
 import Rodape from "./componentes/rodape";
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import Skills from "./componentes/softkills";
 import img1 from "./assets/swiper/img1.webp";
 import img2 from "./assets/swiper/img1.webp";
@@ -15,7 +12,6 @@ import img4 from "./assets/swiper/img1.webp";
 import perfil from "./assets/capa/foto_perfil.webp";
 import WhatsAppFloat from "./componentes/btnwhatsapp/btnwhatsapp";
 import Loader from "./componentes/carregador/loaders";
-
 
 function App() {
   const listaSobre = [
@@ -34,6 +30,10 @@ function App() {
     email: "campos19ferraz@outlook.com",
     twitter: "https://x.com/W3nde11_C",
   };
+
+  const Sobre = lazy(() => import("./componentes/sobre"));
+  const Projetos = lazy(() => import("./componentes/projetos"));
+  const Contato = lazy(() => import("./componentes/contato"));
 
   const [dadosSkills, setDadosSkills] = useState([]);
   const [dadosProjetos, setDadosProjetos] = useState([]);
@@ -61,28 +61,32 @@ function App() {
             "Toda inovação vem acompanhada de transparência e dedicação. Cada linha de código, design e solução apresentada neste portfólio, foi criado com foco em resultados reais e personalizados. Aqui á somente o meu trabalho, mas também minha forma de pensar: clara, responsável e aberta ao diálogo."
           }
           status={"Disponivel"}
-          document={"https://drive.google.com/file/d/1TfWszaDDHvNHm0BZRJlqCzGKVz-zlGiU/view?usp=drive_link"}
+          document={
+            "https://drive.google.com/file/d/1TfWszaDDHvNHm0BZRJlqCzGKVz-zlGiU/view?usp=drive_link"
+          }
         />
       </main>
       <WhatsAppFloat linkURL={linksPessoais} />
       <section className="secao_sobre" id="id_sobre">
         <h2 className="titulo">Sobre</h2>
-        <Sobre
-          DescicaoSobre={
-            "Desenvolvedor Web em transição de carreira, com experiência em contabilidade e análise de dados. Apaixonado por tecnologia, com foco em Python, JavaScript e SQL, busco uma oportunidade para atuar em projetos que envolvam tanto o desenvolvimento de sistemas inovadores e/ou análise de dados para tomada de decisões estratégicas."
-          }
-          Experiencias={
-            "Desenvolvedor Web em transição de carreira, com experiência em contabilidade e análise de dados."
-          }
-          listaSobre={listaSobre}
-          FormacaoAcademica={
-            "Tecnólogo em Análise e Desenvolvimento de Sistemas"
-          }
-          escola={"UniPiaget - 2024"}
-          FormacaoAcademicaStatus={"Cursando"}
-          imagemURL={carrosselImagens}
-          linksPessoais={linksPessoais}
-        />
+        <Suspense fallback={<p>Carregando seção...</p>}>
+          <Sobre
+            DescicaoSobre={
+              "Desenvolvedor Web em transição de carreira, com experiência em contabilidade e análise de dados. Apaixonado por tecnologia, com foco em Python, JavaScript e SQL, busco uma oportunidade para atuar em projetos que envolvam tanto o desenvolvimento de sistemas inovadores e/ou análise de dados para tomada de decisões estratégicas."
+            }
+            Experiencias={
+              "Desenvolvedor Web em transição de carreira, com experiência em contabilidade e análise de dados."
+            }
+            listaSobre={listaSobre}
+            FormacaoAcademica={
+              "Tecnólogo em Análise e Desenvolvimento de Sistemas"
+            }
+            escola={"UniPiaget - 2024"}
+            FormacaoAcademicaStatus={"Cursando"}
+            imagemURL={carrosselImagens}
+            linksPessoais={linksPessoais}
+          />
+        </Suspense>
       </section>
       <section className="secao_skills" id="id_skills">
         <h2 className="titulo">SoftKills</h2>
@@ -109,32 +113,36 @@ function App() {
       </section>
       <section className="secao_projetos" id="id_projetos">
         <h2 className="titulo">Projetos</h2>
-        <ul className="lista_secao_projetos">
-          {dadosProjetos ? (
-            dadosProjetos.map((item, index) => (
-              <li key={index}>
-                <Projetos
-                  id={item.id}
-                  titulo={item.titulo}
-                  skills={item.skills}
-                  resumo={item.resumo}
-                  link={item.link}
-                  imagem={item.imagem}
-                  status={item.status}
-                />
-              </li>
-            ))
-          ) : (
-            <Loader />
-          )}
-        </ul>
+        <Suspense fallback={<p>Carregando seção...</p>}>
+          <ul className="lista_secao_projetos">
+            {dadosProjetos ? (
+              dadosProjetos.map((item, index) => (
+                <li key={index}>
+                  <Projetos
+                    id={item.id}
+                    titulo={item.titulo}
+                    skills={item.skills}
+                    resumo={item.resumo}
+                    link={item.link}
+                    imagem={item.imagem}
+                    status={item.status}
+                  />
+                </li>
+              ))
+            ) : (
+              <Loader />
+            )}
+          </ul>
+        </Suspense>
       </section>
       <section className="secao_contato" id="id_contato">
         <h2 className="titulo">Contato</h2>
         <p className="descricao">Envie uma mensagem!</p>
-        <Contato linksURL={linksPessoais} />
+        <Suspense fallback={<p>Carregando seção...</p>}>
+          <Contato linksURL={linksPessoais} />
+        </Suspense>
       </section>
-      <hr tabIndex="-1"/>
+      <hr tabIndex="-1" />
       <footer className="area_rodape">
         <Rodape
           className="secao_rodape"
