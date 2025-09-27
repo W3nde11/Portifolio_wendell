@@ -5,6 +5,9 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useScrollAnimation } from "../hook_Observar_Elementos/useScrollAnimation";
+
+
 
 export default function Sobre({
   DescicaoSobre,
@@ -16,6 +19,9 @@ export default function Sobre({
   imagemURL,
   linksPessoais,
 }) {
+  
+  useScrollAnimation("caixa_texto", "animar");
+
   return (
     <>
       <Helmet>
@@ -42,12 +48,12 @@ export default function Sobre({
             </ul>
           </div>
         </div>
-        <aside className="caixa_formacao_academica">
+        <aside className="caixa_formacao_academica caixa_texto">
           <div>
             <span aria-hidden="true" className="caixa_icone">
               <span className="icone_formacao_academica"></span>
             </span>
-            <h3 className="subtitulo_formacao_academica">Formação Acadêmica</h3>
+            <h3 className="subtitulo">Formação Acadêmica</h3>
           </div>
           <p className="texto_formacao_academica">
             {FormacaoAcademica}

@@ -16,11 +16,22 @@ body {
   padding: 1.5em;
 }
 
+.secao_skills{
+  background-color: #3f1665;
+}
+
 .titulo {
   margin-bottom: 1rem;
   font: 600 2rem var(--fonte-titulo);
   color: var(--titulos);
   text-transform: uppercase;
+}
+.skills_titulo{
+  color: var(--titulo-skills)
+}
+
+.skills_texto{
+  color: var(--texto-skills);
 }
 
 .descricao {

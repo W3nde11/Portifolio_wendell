@@ -6,7 +6,7 @@
   --capa-texto-status: #306218;
   --capa-fundo-status: #02f347;
   --fundo-status: #97d47c;
-  --texto-status: #3F1665;
+  --texto-status: #3f1665;
   --titulo-card-formacao-acad: white;
   --texto-card-formacao-acad: #c8bfc7;
   --fundo-card-formacao-acad: #3f1665;
@@ -14,13 +14,9 @@
   --fundo-card-skills: white;
   --titulo-card-skills: #7f2ccb;
   --fundo-img-projeto: #3d6affaa;
-  --subtitulo-rodape:#3c913f;
-
-  --fonte-titulo: "JetBrains Mono", monospace;
-  --fonte-texto: "Source Code Pro", monospace;
-}
-
-[data-contexto="dark"] {
+  --subtitulo-rodape: #3c913f;
+  --titulo-skills: #02f347;
+  --texto-skills: #c8bfc7;
   --backGround-body: #040b18;
   --texto: #c8bfc7;
   --capa-titulo-destaque: #5cfc34;
@@ -39,27 +35,9 @@
   --texto-contato: #c8bfc7;
   --fundo-icone-btn-contato: transparent;
   --fundo-input-contato: #132e89;
-}
 
-[data-contexto="light"] {
-  --backGround-body: #bbf2b2;
-  --texto: #040b18;
-  --capa-titulo-destaque: #2a1dd9;
-  --capa-borda-caixa-texto: #040b18;
-  --circulos-capa: #040b18;
-  --sobras: #2c2c2c;
-  --titulos: #224c7e;
-  --destaque-primario: #040b18;
-  --subtitulos: ;
-  --bordas: #040b18;
-  --fundo-container-projetos: white;
-  --caixa-texto: white;
-  --fundo-status-projeto: #3d6affaa;
-  --borda-container-contato: #040b18;
-  --fundo-container-forms: #4434d1;
-  --texto-contato: #e8fb98;
-  --fundo-icone-btn-contato: white;
-  --fundo-input-contato: white;
+  --fonte-titulo: "JetBrains Mono", monospace;
+  --fonte-texto: "Source Code Pro", monospace;
 }
 
 body {

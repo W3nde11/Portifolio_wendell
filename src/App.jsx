@@ -68,7 +68,7 @@ function App() {
       </main>
       <WhatsAppFloat linkURL={linksPessoais} />
       <section className="secao_sobre" id="id_sobre">
-        <h2 className="titulo">Sobre</h2>
+        <h2 className="titulo" id="id_area_sobre">Sobre</h2>
         <Suspense fallback={<p>Carregando seção...</p>}>
           <Sobre
             DescicaoSobre={
@@ -89,8 +89,8 @@ function App() {
         </Suspense>
       </section>
       <section className="secao_skills" id="id_skills">
-        <h2 className="titulo">SoftKills</h2>
-        <p className="descricao">
+        <h2 className="titulo skills_titulo" id="id_area_skills">SoftKills</h2>
+        <p className="descricao skills_texto">
           Conjunto de Tecnologias e Habilidades que utilizo para desenvolver
           soluções robustas e escaláveis.
         </p>
@@ -112,7 +112,7 @@ function App() {
         </ul>
       </section>
       <section className="secao_projetos" id="id_projetos">
-        <h2 className="titulo">Projetos</h2>
+        <h2 className="titulo" id="id_area_projetos">Projetos</h2>
         <Suspense fallback={<p>Carregando seção...</p>}>
           <ul className="lista_secao_projetos">
             {dadosProjetos ? (
@@ -136,7 +136,7 @@ function App() {
         </Suspense>
       </section>
       <section className="secao_contato" id="id_contato">
-        <h2 className="titulo">Contato</h2>
+        <h2 className="titulo" id="id_area_contatos">Contato</h2>
         <p className="descricao">Envie uma mensagem!</p>
         <Suspense fallback={<p>Carregando seção...</p>}>
           <Contato linksURL={linksPessoais} />

@@ -90,7 +90,7 @@ export default function Contato({ linksURL }) {
 
         <address>
           <a href={linksURL.whatsapp} target="_blank" rel="noreferrer">
-            <div className="caixa_btn_contato">
+            <div className="caixa_btn_contato click">
               <div className="fundo_icone_contato">
                 <span className="icone_link_whatsapp"></span>
               </div>
@@ -98,6 +98,18 @@ export default function Contato({ linksURL }) {
                 <span className="titulo_btn_contato">WhatsApp</span>
                 <br />
                 Disponível para contato
+              </div>
+            </div>
+          </a>
+          <a href={linksURL.github} target="_blank" rel="noreferrer">
+            <div className="caixa_btn_contato click">
+              <div className="fundo_icone_contato">
+                <span className="icone_link_github"></span>
+              </div>
+              <div>
+                <span className="titulo_btn_contato">GitHub</span>
+                <br />
+                Veja outros projetos
               </div>
             </div>
           </a>

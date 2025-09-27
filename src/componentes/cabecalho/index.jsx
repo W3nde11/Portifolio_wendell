@@ -1,5 +1,5 @@
 import "./style.css";
-import ThemeToggle from "./tema/ThemeToggle";
+
 import Logo1 from "../../../public/logo_part1.webp";
 import Logo2 from "../../../public/logo_part2.webp";
 import Button from "./botao/btn_contato";
@@ -34,7 +34,6 @@ export default function Cabecalho() {
         >
           <Button />
         </a>
-        <ThemeToggle />
       </div>
       <nav className="navegacao_cabecalho" aria-label="Navegação principal">
         <ul className="lista-links_cabecalho">

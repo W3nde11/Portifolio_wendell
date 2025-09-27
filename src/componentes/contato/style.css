@@ -56,6 +56,11 @@ form button {
   font-size: clamp(0.9rem, 1vw, 1rem);
   cursor: pointer;
   margin: 0 auto;
+  transition: 0.3s;
+}
+
+form button:hover {
+  transform: scale(0.95);
 }
 
 .caixa_forms legend {
@@ -72,6 +77,11 @@ form button {
   box-shadow: 0 8px 20px -10px var(--sobras);
   background-color: var(--fundo-container-forms);
   color: var(--texto-contato);
+  transition: 0.3s;
+}
+
+.click:hover {
+  transform: scale(0.95);
 }
 
 .fundo_icone_contato {
@@ -88,6 +98,10 @@ form button {
 
 .icone_link_email::before {
   content: url(../../../public/32px/mail.svg);
+}
+
+.icone_link_github::before {
+  content: url(../../../public/32px/github_ctt.svg);
 }
 
 .email {

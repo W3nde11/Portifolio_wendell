@@ -11,9 +11,13 @@
   border-radius: 25px;
   background: var(--fundo-card-skills);
 
-  /* evita altura fixa */
   min-height: 350px;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.container_card:hover {
+  transform: scale(1.1); /* Aumenta 20% ao passar o mouse */
 }
 
 .titulo_card,

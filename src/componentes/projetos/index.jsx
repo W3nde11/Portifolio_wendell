@@ -1,3 +1,4 @@
+import { useScrollAnimation } from "../hook_Observar_Elementos/useScrollAnimation";
 import Button from "./botao/botao";
 import "./style.css";
 
@@ -9,6 +10,8 @@ export default function Projetos({
   imagem,
   status,
 }) {
+  useScrollAnimation("container_projeto", "animar");
+
   return (
     <div className="container_projeto">
       <h3 className="titulo_projeto">{titulo}</h3>

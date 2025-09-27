@@ -6,6 +6,14 @@
   border: 2px solid var(--bordas);
   border-radius: 24px;
   background-color: var(--fundo-container-projetos);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.container_projeto.animar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .container_projeto div {
@@ -64,7 +72,7 @@
   transition: transform 0.3s ease;
 }
 
-.fundo_img_projeto:hover .imagem_projeto{
+.fundo_img_projeto:hover .imagem_projeto {
   transform: scale(1.2);
 }
 
