@@ -1,12 +1,14 @@
 import "./App.css";
 import { HelmetProvider } from "react-helmet-async";
 import { Suspense, lazy, useEffect, useState } from "react";
+
 import Cabecalho from "./componentes/cabecalho";
 import Capa from "./componentes/capa";
 import Rodape from "./componentes/rodape";
 import Skills from "./componentes/softkills";
 import WhatsAppFloat from "./componentes/btnwhatsapp/btnwhatsapp";
 import Loader from "./componentes/carregador/loaders";
+
 import LogoP from "../public/logo_part1.webp";
 import LogoS from "../public/logo_part2.webp";
 import img1 from "./assets/swiper/img1.webp";
@@ -18,15 +20,22 @@ import perfil from "./assets/capa/foto_perfil.webp";
 import logo from "../public/logo_decampos.webp";
 
 function App() {
-  const listaSobre = [
-    "👨‍👩‍👧‍👦 Familia",
-    "👯 Amigos",
-    "🌴 Praia",
-    "✈️ Viagens",
-    "🐶 Cachorros",
-    "🏋️ Academia",
-  ];
-  const carrosselImagens = [img1, img2, img3, img4, img5];
+  const Sobre = lazy(() => import("./componentes/sobre"));
+  const Projetos = lazy(() => import("./componentes/projetos"));
+  const Contato = lazy(() => import("./componentes/contato"));
+  
+  const [dadosSkills, setDadosSkills] = useState([]);
+  const [dadosProjetos, setDadosProjetos] = useState([]);
+  
+  useEffect(() => {
+    fetch("https://w3nde11.github.io/Portifolio_API/skills.json")
+    .then((resposta) => resposta.json())
+    .then((dadosSkills) => setDadosSkills(dadosSkills));
+    
+    fetch("https://w3nde11.github.io/Portifolio_API/projetos.json")
+    .then((resposta) => resposta.json())
+    .then((dadosProjetos) => setDadosProjetos(dadosProjetos));
+  }, []);
 
   const linksPessoais = {
     linkedin: "https://linkedin.com/in/wendell-campos-0b76651a9",
@@ -36,22 +45,16 @@ function App() {
     twitter: "https://x.com/W3nde11_C",
   };
 
-  const Sobre = lazy(() => import("./componentes/sobre"));
-  const Projetos = lazy(() => import("./componentes/projetos"));
-  const Contato = lazy(() => import("./componentes/contato"));
+  const listaSobre = [
+    "👨‍👩‍👧‍👦 Familia",
+    "👯 Amigos",
+    "🌴 Praia",
+    "✈️ Viagens",
+    "🐶 Cachorros",
+    "🏋️ Academia",
+  ];
 
-  const [dadosSkills, setDadosSkills] = useState([]);
-  const [dadosProjetos, setDadosProjetos] = useState([]);
-
-  useEffect(() => {
-    fetch("https://w3nde11.github.io/Portifolio_API/skills.json")
-      .then((resposta) => resposta.json())
-      .then((dadosSkills) => setDadosSkills(dadosSkills));
-
-    fetch("https://w3nde11.github.io/Portifolio_API/projetos.json")
-      .then((resposta) => resposta.json())
-      .then((dadosProjetos) => setDadosProjetos(dadosProjetos));
-  }, []);
+  const carrosselImagens = [img1, img2, img3, img4, img5];
 
   return (
 
