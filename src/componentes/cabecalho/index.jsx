@@ -1,15 +1,12 @@
 import "./style.css";
-
-import Logo1 from "../../../public/logo_part1.webp";
-import Logo2 from "../../../public/logo_part2.webp";
 import Button from "./botao/btn_contato";
 
-export default function Cabecalho() {
+export default function Cabecalho({logoURL, logoPartURL}) {
   return (
     <div className="cabecalho">
       <figure>
         <img
-          src={Logo1}
+          src={logoURL}
           alt="Logo do site De Campos"
           className="icone"
           loading="lazy"
@@ -17,7 +14,7 @@ export default function Cabecalho() {
           height={40}
         />
         <img
-          src={Logo2}
+          src={logoPartURL}
           aria-hidden="true"
           alt=""
           className="logo viwer_pc"

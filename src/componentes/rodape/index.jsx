@@ -1,11 +1,10 @@
 import "./style.css";
-import logo from "../../../public/logo_decampos.webp";
 
-export default function Rodape({ frase, linkURL, local }) {
+export default function Rodape({ logoRURL, frase, linkURL, local }) {
   return (
     <div className="rodape">
       <div>
-        <img src={logo} alt="Logo do site DE Campos" className="logo_site" />
+        <img src={logoRURL} alt="Logo do site DE Campos" className="logo_site" />
         <p className="texto">
           <small>{frase}</small>
         </p>
