@@ -1,0 +1,1 @@
+import{r as c}from"./index-Wda8cax1.js";function f(r,t){c.useEffect(()=>{const s=document.querySelectorAll(`.${r}`),o=new IntersectionObserver(e=>{e.forEach(n=>{n.isIntersecting&&n.target.classList.add(t)})},{threshold:.2});return s.forEach(e=>o.observe(e)),()=>o.disconnect()},[r,t])}export{f as u};
