@@ -77,6 +77,8 @@ Este portfólio foi desenvolvido com o objetivo de unir **design moderno** e **b
 - Acessibilidade para todos os usuários
 - Responsividade em diferentes dispositivos
 
+<img width="1907" height="748" alt="image" src="https://github.com/user-attachments/assets/f674d4c4-c1d7-4c62-b900-96db13a19a60" />
+
 ---
 
 ## 📜 Licença
